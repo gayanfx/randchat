@@ -6,11 +6,10 @@ RUN apk add --no-cache make gcc g++ python bash
 
 WORKDIR /app/randchat
 
-COPY package.json /app/randchat
-COPY babel.config.js /app/randchat
-COPY .editorconfig /app/randchat
-COPY tsconfig.json /app/randchat
-#COPY ./src /app/randchat/src
+COPY ./package*.json /app/randchat/
+COPY ./babel.config.js /app/randchat/
+COPY ./.editorconfig /app/randchat/
+COPY ./tsconfig.json /app/randchat/
 
 
 RUN npm install

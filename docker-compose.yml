@@ -9,7 +9,6 @@ services:
     ports:
       - "1111:1111"
     volumes:
-      - ./package-lock.json:/app/randchat/package-lock.json
       - ./public:/app/randchat/public
       - ./tests:/app/randchat/tests
       - ./src:/app/randchat/src
