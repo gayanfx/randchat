@@ -1,0 +1,15 @@
+version: '3'
+services:
+  randchat:
+    build: .
+    container_name: "randchat"
+    environment:
+      NODE_ENV: development
+      NODE_PATH: /
+    ports:
+      - "1111:1111"
+    volumes:
+      - ./package-lock.json:/app/randchat/package-lock.json
+      - ./public:/app/randchat/public
+      - ./tests:/app/randchat/tests
+      - ./src:/app/randchat/src
