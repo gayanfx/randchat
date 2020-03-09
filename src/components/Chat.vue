@@ -1,3 +1,9 @@
 <template>
-    <h1>Random chat</h1>
+    <div>FILLTEXT</div>
 </template>
+
+<style lang="scss">
+#chat {
+    background: black;
+}
+</style>
