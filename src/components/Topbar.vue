@@ -2,6 +2,8 @@
     <div class="container">
         <nav id="topbar">
             <div class="left-side">
+                <a href="#" class="burger"><img src="../assets/svg/burger.svg"/></a>
+                <span></span>
                 <ul>
                     <li><a href="#">About</a></li>
                     <li><a href="#">FAQ</a></li>
@@ -17,6 +19,8 @@
 </template>
 
 <style lang="scss">
+@import '../scss/media';
+
 $text-color:            #252525;
 $hover-color:           #AAAAAA;
 $background-color:      #E4E4E4;
@@ -34,17 +38,28 @@ $background-color:      #E4E4E4;
   grid-template-columns: 1fr;
 }
 
-.left-side {
-    display: flex;
-    margin-right: 20px;
+@mixin list($burger, $links) {
+    .burger {
+        display: $burger;
+        width: 32px;
+        height: 32px;
+        &:hover {
+            background-color: $hover-color;
+            cursor: pointer;
+        }
+        &:focus {
+            outline: none;
+            border-style: none;
+        }
+    }
     ul {
         padding: 0;
         margin: 0;
         list-style: none;
         li {
-            display: inline-block;
+            display: $links;
             a {
-                display: inline-block;
+                display: $links;
                 padding: 5px;
                 color: $text-color;
                 text-decoration: none;
@@ -54,6 +69,17 @@ $background-color:      #E4E4E4;
                 }
             }
         }
+    }
+}
+
+.left-side {
+    display: flex;
+    margin-right: 20px;
+    @include respond-to(mobile) {
+        @include list(block, none);
+    }
+    @include respond-to(pc) {
+        @include list(none, inline-block);
     }
 }
 

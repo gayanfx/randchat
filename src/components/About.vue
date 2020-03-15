@@ -14,14 +14,7 @@
 
 <style lang="scss">
 
-@mixin respond-to($media) {
-  @if $media == mobile {
-    @media only screen and (max-width: 920px) { @content; }
-  }
-  @else if $media == pc {
-    @media only screen and (min-width: 920px) { @content; }
-  }
-}
+@import '../scss/media';
 
 #about {
     height: 90vh;
